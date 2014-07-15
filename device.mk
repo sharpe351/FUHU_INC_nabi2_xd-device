@@ -17,7 +17,14 @@
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.carrier=wifi-only
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+   LOCAL_KERNEL := device/FUHU_INC/nabi2_xd/kernel
+ else
+   LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+ endif
+
 PRODUCT_COPY_FILES := \
+    $(LOCAL_KERNEL):kernel \
     device/FUHU_INC/nabi2_xd/fstab.nabi2_xd:root/fstab.nabi2_xd \
     device/FUHU_INC/nabi2_xd/init.nabi2_xd.rc:root/init.nabi2_xd.rc \
     device/FUHU_INC/nabi2_xd/recovery.fstab:root/recovery.fstab \

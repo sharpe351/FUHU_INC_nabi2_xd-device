@@ -17,6 +17,9 @@
 /system/bin/glgps
 /system/bin/sensorservice
 /system/bin/tf_daemon
+/system/bin/nvcpud
+/system/bin/pm_service
+/system/bin/wifi_loader.sh
 /system/etc/firmware/bcm4330.hcd
 /system/etc/firmware/nvavp_os_0ff00000.bin
 /system/etc/firmware/nvavp_os_eff00000.bin
@@ -34,6 +37,7 @@
 /system/lib/hw/hwcomposer.tegra.so
 /system/lib/hw/keystore.default.so
 /system/lib/hw/sensors.nabi2_xd.so
+/system/lib/hw/lights.nabi2_xd.so
 /system/lib/libardrv_dynamic.so
 /system/lib/libcgdrv.so
 /system/lib/libdrmdecrypt.so
