@@ -1,1 +1,1 @@
-require board=kai
+require board=nabi2_xd
