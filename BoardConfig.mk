@@ -1,4 +1,4 @@
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,11 +29,14 @@
 # we set USE_PROPRIETARY_AUDIO_EXTENSIONS to true in the proprietary variant as
 # well.
 
-TARGET_KERNEL_SOURCE := kernel/FUHU_INC/nabi2_xd
-TARGET_KERNEL_CONFIG := tegra_defconfig
+# Note: this is purely experimental at this point. No custom ROM build has booted as of yet.
 
-#TARGET_PREBUILT_KERNEL := device/FUHU_INC/nabi2_xd/kernel
-#TARGET_PREBUILT_RECOVERY_KERNEL := device/FUHU_INC/nabi2_xd/kernel
+#TARGET_KERNEL_SOURCE := kernel/FUHU_INC/nabi2_xd
+#TARGET_KERNEL_CONFIG := tegra_defconfig
+
+TARGET_PREBUILT_KERNEL := device/FUHU_INC/nabi2_xd/kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/FUHU_INC/nabi2_xd/kernel
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=nabi2_xd user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1 androidboot.selinux=permissive selinux=0
 
 USE_CAMERA_STUB := true
 USE_PROPRIETARY_AUDIO_EXTENSIONS := false
@@ -125,7 +128,7 @@ ifneq ($(HAVE_NVIDIA_PROP_SRC),false)
 -include vendor/nvidia/build/definitions.mk
 endif
 
-# Required for CWM
+# Required for recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
